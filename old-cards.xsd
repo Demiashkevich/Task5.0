@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="old-cards"
+        xmlns:tns="old-cards"
+        elementFormDefault="qualified">
+
+    <element name="old-card" type="tns:OldCard" abstract="true"/>
+    <element name="picture-old-card" type="tns:PictureOldCard" substitutionGroup="tns:old-card"/>
+    <element name="greeting-old-card" type="tns:GreetingOldCard" substitutionGroup="tns:old-card"/>
+
+    <element name="old-cards">
+        <complexType>
+            <sequence>
+                <element ref="tns:old-card" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="OldCard">
+        <sequence>
+            <element name="code" type="tns:Code"/>
+            <element name="country" type="string"/>
+            <element name="year" type="gYear"/>
+            <element name="dispatch" type="boolean"/>
+            <element name="cost" type="decimal"/>
+        </sequence>
+    </complexType>
+    
+    <simpleType name="Code">
+        <restriction base="ID">
+            <pattern value="[RLVCUE][A-Z]\d{9}[A-Z]{2}"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="PictureOldCard">
+        <complexContent>
+            <extension base="tns:OldCard">
+                <sequence>
+                    <element name="author" type="tns:Author"/>
+                    <element name="picture-name" type="string"/>
+                </sequence>
+                <attribute name="picture-type" use="required">
+                    <simpleType>
+                        <restriction base = "string">
+                            <enumeration value="cityscape"/>
+                            <enumeration value="nature"/>
+                            <enumeration value="people"/>
+                            <enumeration value="religion"/>
+                            <enumeration value="sports"/>
+                            <enumeration value="architecture"/>
+                        </restriction>
+                    </simpleType>
+                </attribute>
+                <attribute name="valuable" use="optional">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="historical"/>
+                            <enumeration value="collection"/>
+                            <enumeration value="thematic"/>
+                        </restriction>
+                    </simpleType>
+                </attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="Author">
+        <sequence>
+            <element name="first-name" type="tns:Name"/>
+            <element name="last-name" type="tns:Name"/>
+            <element name="birthday" type="date"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="GreetingOldCard">
+        <complexContent>
+            <extension base="tns:OldCard">
+                <attribute name="greeting-day" use="required">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="birthday"/>
+                            <enumeration value="orthodox christmas day"/>
+                            <enumeration value="defender of the fatherland day"/>
+                            <enumeration value="victory day"/>
+                            <enumeration value="unity day"/>
+                            <enumeration value="easter"/>
+                            <enumeration value="valentine's day"/>
+                        </restriction>
+                    </simpleType>
+                </attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <simpleType name="Name">
+        <restriction base="string">
+            <pattern value="[A-z]+"/>
+        </restriction>
+    </simpleType>
+
+</schema>

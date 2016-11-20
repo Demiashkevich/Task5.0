@@ -1,0 +1,193 @@
+<old-cards xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="old-cards"
+           xsi:schemaLocation="old-cards.xsd">
+
+    <picture-old-card  picture-type="nature" valuable="collection">
+        <code>RA148392778RU</code>
+        <country>Russia</country>
+        <year>2014</year>
+        <dispatch>true</dispatch>
+        <cost>150.5</cost>
+        <author>
+            <first-name>Wassily</first-name>
+            <last-name>Kandinsky</last-name>
+            <birthday>1920-09-24</birthday>
+        </author>
+        <picture-name>Vologda</picture-name>
+    </picture-old-card>
+
+    <picture-old-card  picture-type="people" valuable="collection">
+        <code>RA148592778AU</code>
+        <country>Australia</country>
+        <year>2002</year>
+        <dispatch>true</dispatch>
+        <cost>96.5</cost>
+        <author>
+            <first-name>Marlon</first-name>
+            <last-name>Brando</last-name>
+            <birthday>1910-04-12</birthday>
+        </author>
+        <picture-name>A Flag is Born</picture-name>
+    </picture-old-card>
+
+    <picture-old-card  picture-type="architecture" valuable="thematic">
+        <code>RZ148395748US</code>
+        <country>USA</country>
+        <year>2016</year>
+        <dispatch>true</dispatch>
+        <cost>150.5</cost>
+        <author>
+            <first-name>Jackson</first-name>
+            <last-name>Pollock</last-name>
+            <birthday>1904-10-01</birthday>
+        </author>
+        <picture-name>Katharine Cornell</picture-name>
+    </picture-old-card>
+
+    <picture-old-card  picture-type="cityscape">
+        <code>LT148392643FR</code>
+        <country>France</country>
+        <year>2010</year>
+        <dispatch>false</dispatch>
+        <cost>105.0</cost>
+        <author>
+            <first-name>Wassily</first-name>
+            <last-name>Kandinsky</last-name>
+            <birthday>1904-09-24</birthday>
+        </author>
+        <picture-name>Franz von Stuck</picture-name>
+    </picture-old-card>
+
+    <greeting-old-card greeting-day="birthday">
+        <code>RS544365378US</code>
+        <country>USA</country>
+        <year>2016</year>
+        <dispatch>false</dispatch>
+        <cost>330.6</cost>
+    </greeting-old-card>
+
+    <greeting-old-card greeting-day="orthodox christmas day">
+        <code>RZ348324747US</code>
+        <country>USA</country>
+        <year>2016</year>
+        <dispatch>false</dispatch>
+        <cost>330.6</cost>
+    </greeting-old-card>
+
+    <greeting-old-card greeting-day="unity day">
+        <code>LD648395748AR</code>
+        <country>Argentina</country>
+        <year>1994</year>
+        <dispatch>true</dispatch>
+        <cost>40.4</cost>
+    </greeting-old-card>
+
+    <greeting-old-card greeting-day="easter">
+        <code>CZ348395768BY</code>
+        <country>Belarus</country>
+        <year>2014</year>
+        <dispatch>true</dispatch>
+        <cost>54.7</cost>
+    </greeting-old-card>
+
+    <greeting-old-card greeting-day="valentine's day">
+        <code>RN234355648US</code>
+        <country>USA</country>
+        <year>2015</year>
+        <dispatch>false</dispatch>
+        <cost>340.9</cost>
+    </greeting-old-card>
+
+    <greeting-old-card greeting-day="birthday">
+        <code>RZ148395748AT</code>
+        <country>Austria</country>
+        <year>2016</year>
+        <dispatch>false</dispatch>
+        <cost>199.9</cost>
+    </greeting-old-card>
+
+    <picture-old-card  picture-type="architecture">
+        <code>LB448342543VT</code>
+        <country>Vietnam</country>
+        <year>2010</year>
+        <dispatch>false</dispatch>
+        <cost>145.9</cost>
+        <author>
+            <first-name>Wassily</first-name>
+            <last-name>Kandinsky</last-name>
+            <birthday>1895-09-05</birthday>
+        </author>
+        <picture-name>Franz von Stuck</picture-name>
+    </picture-old-card>
+
+    <picture-old-card  picture-type="cityscape" valuable="historical">
+        <code>LT321396367AT</code>
+        <country>Austria</country>
+        <year>2005</year>
+        <dispatch>true</dispatch>
+        <cost>125.1</cost>
+        <author>
+            <first-name>Carl</first-name>
+            <last-name>Barks</last-name>
+            <birthday>1925-03-15</birthday>
+        </author>
+        <picture-name>Odessa Port</picture-name>
+    </picture-old-card>
+
+    <picture-old-card  picture-type="people" valuable="collection">
+        <code>LT148392643RU</code>
+        <country>Russia</country>
+        <year>2010</year>
+        <dispatch>false</dispatch>
+        <cost>195.9</cost>
+        <author>
+            <first-name>Peter</first-name>
+            <last-name>Voulkos</last-name>
+            <birthday>1919-12-26</birthday>
+        </author>
+        <picture-name>Adhara</picture-name>
+    </picture-old-card>
+
+    <picture-old-card  picture-type="people" valuable="thematic">
+        <code>LT148334541FR</code>
+        <country>USA</country>
+        <year>2012</year>
+        <dispatch>true</dispatch>
+        <cost>142.1</cost>
+        <author>
+            <first-name>Charlie</first-name>
+            <last-name>Chaplin</last-name>
+            <birthday>1896-10-12</birthday>
+        </author>
+        <picture-name>Demitasse</picture-name>
+    </picture-old-card>
+
+    <picture-old-card  picture-type="sports" valuable="thematic">
+        <code>LF148256743FR</code>
+        <country>France</country>
+        <year>2013</year>
+        <dispatch>false</dispatch>
+        <cost>185.9</cost>
+        <author>
+            <first-name>Wassily</first-name>
+            <last-name>Kandinsky</last-name>
+            <birthday>1904-09-24</birthday>
+        </author>
+        <picture-name>Houses in Munich</picture-name>
+    </picture-old-card>
+
+    <picture-old-card  picture-type="religion" valuable="collection">
+        <code>LC143392378BY</code>
+        <country>Belarus</country>
+        <year>1995</year>
+        <dispatch>false</dispatch>
+        <cost>55.4</cost>
+        <author>
+            <first-name>Wassily</first-name>
+            <last-name>Kandinsky</last-name>
+            <birthday>1904-09-24</birthday>
+        </author>
+        <picture-name>The Cow</picture-name>
+    </picture-old-card>
+
+</old-cards>
