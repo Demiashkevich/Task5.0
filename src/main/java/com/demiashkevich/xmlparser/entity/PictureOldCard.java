@@ -4,24 +4,18 @@ public class PictureOldCard extends OldCard {
 
     private String pictureType;
     private String valuable;
-    private String authorFirstName;
-    private String authorLastName;
-    private String birthday;
-    private String pictureName;
+    private Author author;
 
     public PictureOldCard() {
+        this.author = new Author();
     }
 
-    public PictureOldCard(String code, String country, int year, boolean dispatch, double cost, String pictureType,
-                          String valuable, String authorFirstName, String authorLastName, String birthday, String pictureName) {
-        super(code, country, year, dispatch, cost);
-        this.pictureType = pictureType;
-        this.valuable = valuable;
-        this.authorFirstName = authorFirstName;
-        this.authorLastName = authorLastName;
-        this.birthday = birthday;
-        this.pictureName = pictureName;
+    public Author getAuthor() {
+        return author;
+    }
 
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     public String getPictureType() {
@@ -40,36 +34,57 @@ public class PictureOldCard extends OldCard {
         this.valuable = valuable;
     }
 
-    public String getAuthorFirstName() {
-        return authorFirstName;
-    }
+    public class Author {
 
-    public void setAuthorFirstName(String authorFirstName) {
-        this.authorFirstName = authorFirstName;
-    }
+        private String authorFirstName;
+        private String authorLastName;
+        private String birthday;
+        private String pictureName;
 
-    public String getPictureName() {
-        return pictureName;
-    }
+        public Author() {
+        }
 
-    public void setPictureName(String pictureName) {
-        this.pictureName = pictureName;
-    }
+        public String getAuthorFirstName() {
+            return authorFirstName;
+        }
 
-    public String getAuthorLastName() {
-        return authorLastName;
-    }
+        public void setAuthorFirstName(String authorFirstName) {
+            this.authorFirstName = authorFirstName;
+        }
 
-    public void setAuthorLastName(String authorLastName) {
-        this.authorLastName = authorLastName;
-    }
+        public String getAuthorLastName() {
+            return authorLastName;
+        }
 
-    public String getBirthday() {
-        return birthday;
-    }
+        public void setAuthorLastName(String authorLastName) {
+            this.authorLastName = authorLastName;
+        }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+        public String getBirthday() {
+            return birthday;
+        }
+
+        public void setBirthday(String birthday) {
+            this.birthday = birthday;
+        }
+
+        public String getPictureName() {
+            return pictureName;
+        }
+
+        public void setPictureName(String pictureName) {
+            this.pictureName = pictureName;
+        }
+
+        @Override
+        public String toString() {
+            return " Author{" +
+                    "authorFirstName='" + authorFirstName + '\'' +
+                    ", authorLastName='" + authorLastName + '\'' +
+                    ", birthday='" + birthday + '\'' +
+                    ", pictureName='" + pictureName + '\'' +
+                    '}';
+        }
     }
 
     @Override
@@ -77,15 +92,10 @@ public class PictureOldCard extends OldCard {
         return "PictureOldCard{" +
                 "pictureType='" + pictureType + '\'' +
                 ", valuable='" + valuable + '\'' +
-                ", authorFirstName='" + authorFirstName + '\'' +
-                ", authorLastName='" + authorLastName + '\'' +
-                ", birthday='" + birthday + '\'' +
-                ", pictureName='" + pictureName + '\'' +
                 ", code='" + getCode() + '\'' +
                 ", country='" + getCountry() + '\'' +
                 ", cost='" + getCost() + '\'' +
                 ", dispatch='" + isDispatch() + '\'' +
-                ", year='" + getYear() + '\'' +
-                '}';
+                ", year='" + getYear() + '\'' + author;
     }
 }

@@ -1,10 +1,12 @@
-package com.demiashkevich.xmlparser.parser.sax;
+package handler;
 
+import com.demiashkevich.xmlparser.constant.CardType;
 import com.demiashkevich.xmlparser.builder.OldCardBuilder;
 import com.demiashkevich.xmlparser.constant.CardStructure;
-import com.demiashkevich.xmlparser.constant.CardType;
 import com.demiashkevich.xmlparser.creator.CardCreator;
 import com.demiashkevich.xmlparser.entity.OldCard;
+import com.demiashkevich.xmlparser.exception.CardBuilderNotFoundException;
+import org.apache.log4j.Logger;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -15,6 +17,8 @@ import java.util.List;
 import java.util.Set;
 
 public class OldCardHandler extends DefaultHandler{
+
+    private static Logger LOGGER = Logger.getLogger(OldCardHandler.class);
 
     private OldCardBuilder card;
     private CardStructure currentCardType;
@@ -28,7 +32,11 @@ public class OldCardHandler extends DefaultHandler{
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         CardType typeCard = cardElement(localName);
         if(typeCard != null) {
-            card = CardCreator.getCard(typeCard);
+            try {
+                card = CardCreator.getCard(typeCard);
+            } catch (CardBuilderNotFoundException exception) {
+                LOGGER.error(exception);
+            }
             List<String> listAttributes = new ArrayList<>();
             for (int i = 0; i < attributes.getLength(); i++) {
                 listAttributes.add(attributes.getValue(i));
@@ -74,6 +82,8 @@ public class OldCardHandler extends DefaultHandler{
                 case COST:
                     card.buildCost(Double.parseDouble(info));
                     break;
+                case AUTHOR:
+                    break;
                 case FIRST_NAME:
                     card.buildAuthorFirstName(info);
                     break;
@@ -85,7 +95,9 @@ public class OldCardHandler extends DefaultHandler{
                     break;
                 case PICTURE_NAME:
                     card.buildPictureName(info);
-                default: //Exception Enum
+                    break;
+                default: throw new EnumConstantNotPresentException(currentCardType.getDeclaringClass(),
+                        currentCardType.name());
             }
         }
         currentCardType = null;

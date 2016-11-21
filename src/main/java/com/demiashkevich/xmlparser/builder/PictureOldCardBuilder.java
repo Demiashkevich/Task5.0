@@ -20,21 +20,22 @@ public class PictureOldCardBuilder extends OldCardBuilder {
 
     @Override
     public void buildAuthorFirstName(String firstName) {
-        ((PictureOldCard)card).setAuthorFirstName(firstName);
+        ((PictureOldCard)card).getAuthor().setAuthorFirstName(firstName);
     }
 
     @Override
     public void buildAuthorLastName(String lastName) {
-        ((PictureOldCard)card).setAuthorLastName(lastName);
+        ((PictureOldCard)card).getAuthor().setAuthorLastName(lastName);
     }
 
     @Override
     public void buildBirthday(String date) {
-        ((PictureOldCard)card).setBirthday(date);
+        ((PictureOldCard)card).getAuthor().setBirthday(date);
     }
 
     @Override
     public void buildPictureName(String pictureName) {
-        ((PictureOldCard)card).setPictureName(pictureName);
+        ((PictureOldCard)card).getAuthor().setPictureName(pictureName);
     }
+
 }

@@ -12,14 +12,6 @@ public class OldCard {
     public OldCard() {
     }
 
-    public OldCard(String code, String country, int year, boolean dispatch, double cost) {
-        this.code = code;
-        this.country = country;
-        this.year = year;
-        this.dispatch = dispatch;
-        this.cost = cost;
-    }
-
     public String getCode() {
         return code;
     }

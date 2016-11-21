@@ -1,25 +1,34 @@
 package com.demiashkevich.xmlparser.runner;
 
-import com.demiashkevich.xmlparser.parser.dom.OldCardDOMBuilder;
-import com.demiashkevich.xmlparser.parser.sax.OldCardSAXBuilder;
-import com.demiashkevich.xmlparser.parser.stax.OldCardStAXBuilder;
+import com.demiashkevich.xmlparser.entity.OldCard;
+import com.demiashkevich.xmlparser.parser.OldCardDOMBuilder;
+import com.demiashkevich.xmlparser.parser.OldCardSAXBuilder;
+import com.demiashkevich.xmlparser.parser.OldCardStAXBuilder;
+import com.demiashkevich.xmlparser.report.ReportXML;
+
+import java.util.Set;
 
 public class Main {
+
+    private static final String pathXML = "data/old-cards.xml";
+
     public static void main(String[] args) {
         OldCardSAXBuilder saxBuilder = new OldCardSAXBuilder();
-        saxBuilder.buildSetCards("old-cards.xml");
-        System.out.println(saxBuilder.getCards());
-
-        System.out.println("-------------------------------------------------------------------------------------------");
+        saxBuilder.buildSetCards(pathXML);
+        Set<OldCard> cardsSAX = saxBuilder.getCards();
 
         OldCardDOMBuilder domBuilder = new OldCardDOMBuilder();
-        domBuilder.buildSetCards("old-cards.xml");
-        System.out.println(domBuilder.getCards());
-
-        System.out.println("-------------------------------------------------------------------------------------------");
+        domBuilder.buildSetCards(pathXML);
+        Set<OldCard> cardsDOM = domBuilder.getCards();
 
         OldCardStAXBuilder staxBuilder = new OldCardStAXBuilder();
-        staxBuilder.buildSetCards("old-cards.xml");
-        System.out.println(staxBuilder.getCards());
+        staxBuilder.buildSetCards(pathXML);
+        Set<OldCard> cardsStAX = staxBuilder.getCards();
+
+        ReportXML reportXML = new ReportXML();
+        reportXML.report(cardsSAX);
+        reportXML.report(cardsDOM);
+        reportXML.report(cardsStAX);
+
     }
 }

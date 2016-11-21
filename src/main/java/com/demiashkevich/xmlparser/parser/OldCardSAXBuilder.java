@@ -1,6 +1,7 @@
-package com.demiashkevich.xmlparser.parser.sax;
+package com.demiashkevich.xmlparser.parser;
 
 import com.demiashkevich.xmlparser.entity.OldCard;
+import handler.OldCardHandler;
 import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
@@ -10,11 +11,10 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-public class OldCardSAXBuilder {
+public class OldCardSAXBuilder extends AbstractOldCardBuilder {
 
     private static final Logger LOGGER =  Logger.getLogger(OldCardSAXBuilder.class);
 
-    private Set<OldCard> cards;
     private OldCardHandler cardHandler;
     private XMLReader xmlReader;
 
@@ -25,7 +25,7 @@ public class OldCardSAXBuilder {
             xmlReader = XMLReaderFactory.createXMLReader();
             xmlReader.setContentHandler(cardHandler);
         } catch (SAXException exception) {
-            LOGGER.fatal(exception);
+            LOGGER.error(exception);
         }
     }
 

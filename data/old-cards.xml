@@ -1,6 +1,6 @@
 <old-cards xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xmlns="old-cards"
-           xsi:schemaLocation="old-cards.xsd">
+           xmlns="http://www.example.com/old-cards"
+           xsi:schemaLocation="http://www.example.com/old-cards.xsd">
 
     <picture-old-card  picture-type="nature" valuable="collection">
         <code>RA148392778RU</code>

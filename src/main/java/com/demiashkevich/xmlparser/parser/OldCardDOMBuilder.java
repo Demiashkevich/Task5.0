@@ -1,9 +1,10 @@
-package com.demiashkevich.xmlparser.parser.dom;
+package com.demiashkevich.xmlparser.parser;
 
 import com.demiashkevich.xmlparser.builder.OldCardBuilder;
 import com.demiashkevich.xmlparser.constant.CardType;
 import com.demiashkevich.xmlparser.creator.CardCreator;
 import com.demiashkevich.xmlparser.entity.OldCard;
+import com.demiashkevich.xmlparser.exception.CardBuilderNotFoundException;
 import org.apache.log4j.Logger;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -13,20 +14,17 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class OldCardDOMBuilder {
+public class OldCardDOMBuilder extends AbstractOldCardBuilder {
 
     private static final Logger LOGGER = Logger.getLogger(OldCardDOMBuilder.class);
 
-    private Set<OldCard> cards;
     private DocumentBuilder documentBuilder;
     private OldCardBuilder card;
 
     public OldCardDOMBuilder() {
-        cards = new HashSet<>();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             documentBuilder = factory.newDocumentBuilder();
@@ -56,10 +54,14 @@ public class OldCardDOMBuilder {
         }
     }
 
-    public OldCard buildOldCard(Element element){
+    private OldCard buildOldCard(Element element){
         for(CardType type : CardType.values()){
             if(type.getType().equalsIgnoreCase(element.getTagName())){
-                card = CardCreator.getCard(type);
+                try {
+                    card = CardCreator.getCard(type);
+                } catch (CardBuilderNotFoundException exception) {
+                    LOGGER.error(exception);
+                }
             }
         }
         List<String> attribute = new ArrayList<>();

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="old-cards"
-        xmlns:tns="old-cards"
+        targetNamespace="http://www.example.com/old-cards"
+        xmlns:tns="http://www.example.com/old-cards"
         elementFormDefault="qualified">
 
     <element name="old-card" type="tns:OldCard" abstract="true"/>

@@ -10,7 +10,7 @@
         </layout>
     </appender>
 
-    <category name="com.demiashkevich.parsefile">
+    <category name="com.demiashkevich.xmlparser">
         <priority value="debug"/>
         <appender-ref ref="console"/>
     </category>

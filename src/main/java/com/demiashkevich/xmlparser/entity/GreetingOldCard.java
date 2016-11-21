@@ -7,11 +7,6 @@ public class GreetingOldCard extends OldCard {
     public GreetingOldCard() {
     }
 
-    public GreetingOldCard(String code, String country, int year, boolean dispatch, double cost, String greetingDay) {
-        super(code, country, year, dispatch, cost);
-        this.greetingDay = greetingDay;
-    }
-
     public String getGreetingDay() {
         return greetingDay;
     }
